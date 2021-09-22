@@ -11,31 +11,32 @@ int main() {
         std::cout<<"asymptote: "<<c.asymptote()<<std::endl;
         std::cout<<"square: "<<c.square()<<std::endl;
         std::cout<<"volume: "<<c.volume()<<std::endl;
-        std::cout<<"Enter angle for calculate distance or press ctrl+D to continue:";
+        std::cout<<"Enter angle for calculate distance or press ctrl+D to exit:";
         int grad;
-        if (Prog2::getNum(grad)!=-1){
-            if (c.distance(grad)<0){
-                std::cout<<"This angle goes beyond the available"<<std::endl;
-            }else {
-                std::cout << "distance:" << c.distance(grad) << std::endl;
-            }
+        if (Prog2::getNum(grad)==-1){
+            break;
         }
-        std::cout<<"Enter x for calculate y(x) and coefficient or press ctrl+D to continue:";
+        if (c.distance(grad)<0){
+            std::cout<<"This angle goes beyond the available"<<std::endl;
+        }else {
+            std::cout << "distance:" << c.distance(grad) << std::endl;
+        }
+        std::cout<<"Enter x for calculate y(x) and coefficient or press ctrl+D to exit:";
         int x;
-        if (Prog2::getNum(x)!=-1){
-            try {
-                double res = c.value_y(x);/*вспомогательный элемент, чтобы в случае неправильного
+        if (Prog2::getNum(x)==-1){
+            break;
+        }
+        try {
+            double res = c.value_y(x);/*вспомогательный элемент, чтобы в случае неправильного
                 *ввода х не выводилась часть, находящаяся до вызова метода value_y*/
-                std::cout << "y(x) = +-" << res << std::endl;
-                std::cout<<"coefficient ="<<c.coefficient(x)<<std::endl;
-            }catch (const char *a){
-                std::cout<<a<<std::endl;
-            }
+            std::cout << "y(x) = +-" << res << std::endl;
+            std::cout<<"coefficient ="<<c.coefficient(x)<<std::endl;
+        }catch (const char *a){
+            std::cout<<a<<std::endl;
         }
         std::cout<<"Enter new a or press ctrl+D to exit:";
         int a1;
         if (Prog2::getNum(a1)==-1){
-            std::cout<<"EOF"<<std::endl;
             fl1 = 0;
         }else {
             try {
