@@ -27,7 +27,7 @@ namespace Prog2 {
     private:
         double a; //радиус окружности
     public:
-        Ciccoida(double rad = 1);//пустой конструктор
+        Ciccoida(double rad = 1);//пустой конструктор, а также инициализирующий конструктор
         Ciccoida(const Ciccoida &ciccoida);//копирующий конструктор
         //сеттеры - set'теры
         Ciccoida& set(double a0){a=a0; return *this;}
