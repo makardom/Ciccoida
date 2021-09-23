@@ -11,7 +11,7 @@ namespace Prog2{
         a = ciccoida.a;
     }
 
-    double Ciccoida::distance(double grad) const {
+    double Ciccoida::distance(double grad) const {//вводится угол в градусах
         while(grad>=360 || grad<0){/*здесь угол преобразуется в угол, лежащий в промежутке от 0 до 2*pi*/
             if (grad>=360)
                 grad-=360;
