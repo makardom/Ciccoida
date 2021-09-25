@@ -3,8 +3,6 @@
 #include <cmath>
 #include <iostream>
 
-#define PI 3.1415926535
-
 namespace Prog2 {
     template<class T>
     int getNum(T &a){/*функция принимает ссылку на число любого типа(целое, действительное)
