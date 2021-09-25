@@ -21,12 +21,12 @@ namespace Prog2{
         if (a<0){
             if (grad<=90 || grad>=270)//проверка на правильность угла, если а<0
                 return -1;
-            grad = PI/180 *grad;
+            grad = M_PI/180 *grad;
             return 2*a* sin(grad)* sin(grad)/ cos(grad);
         }else{
             if (grad>=90&&grad<=270)//проверка на правильность угла, если а>0
                 return -2;
-            grad = PI/180 *grad;
+            grad = M_PI/180 *grad;
             return 2*a* sin(grad)* sin(grad)/ cos(grad);
         }
     }
@@ -46,7 +46,7 @@ namespace Prog2{
     }
 
     double Ciccoida::volume() const {
-        double res = 2*PI*PI*a*a*a;
+        double res = 2*M_PI*M_PI*a*a*a;
         if (res<0){
             res *= -1;
         }

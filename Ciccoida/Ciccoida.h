@@ -34,7 +34,7 @@ namespace Prog2 {
         //геттеры - get'теры
         double get() const{return a;}
         //другие методы
-        double square() const{ return 3*PI*a*a; }//вычисление площади полосы между циссоидой и ее асимптотой
+        double square() const{ return 3*M_PI*a*a; }//вычисление площади полосы между циссоидой и ее асимптотой
         double distance(double grad = 0) const;//расстояние до центра в полярной системе
         double value_y(double x=1) const;//значение y в декартовой системе координат по указанному x
         double asymptote() const { return 2*a; }//коэффициент в уравнении асимптоты
