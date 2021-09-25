@@ -40,6 +40,7 @@ TEST(CiccoidaMethods, Distance){//tests for calculating the distance
     ASSERT_NEAR(2*c.get()* sin(PI)* sin(PI)/ cos(PI), c.distance(180), near);
     ASSERT_NEAR(2*c.get()* sin(2*PI/3)* sin(2*PI/3)/ cos(2*PI/3), c.distance(120), near);
     ASSERT_NEAR(2*c.get()* sin(5*PI/4)* sin(5*PI/4)/ cos(5*PI/4), c.distance(225), near);
+//    ASSERT_NEAR(2*c.get()* sin(PI/4)* sin(PI/4)/ cos(PI/4), c.distance(45), near);
 }
 
 TEST(CiccoidaMethods, VALUEY){//tests for calculating y(x)

@@ -30,20 +30,16 @@ int main() {
             double res = c.value_y(x);/*вспомогательный элемент, чтобы в случае неправильного
                 *ввода х не выводилась часть, находящаяся до вызова метода value_y, т.е. "y(x) = +-"*/
             std::cout << "y(x) = +-" << res << std::endl;
-            std::cout<<"coefficient ="<<c.coefficient(x)<<std::endl;
-        }catch (const char *a){
-            std::cout<<a<<std::endl;
+            std::cout<<"coefficient ="<<c.coefficient()<<std::endl;
+        }catch (std::runtime_error &a){
+            std::cout<<a.what()<<std::endl;
         }
         std::cout<<"Enter new a or press ctrl+D to exit:";
         int a1;
         if (Prog2::getNum(a1)==-1){
             fl1 = 0;
         }else {
-            try {
-                c.set(a1);
-            }catch(std::exception &ex){
-                std::cout<<ex.what()<<std::endl;
-            }
+            c.set(a1);
         }
     }
     return 0;

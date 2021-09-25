@@ -33,18 +33,16 @@ namespace Prog2{
 
     double Ciccoida::value_y(double x) const{
         if (2*a-x==0){
-            throw "invalid x";
+            throw std::runtime_error("invalid x");
         }
         double prom = x*x*x/(2*a-x);//вводится переменная для того, чтобы не выполнять вычисления дважды
         if (prom<0)
-            throw "invalid x";
+            throw std::runtime_error("invalid x");
         return sqrt(prom);
     }
 
-    double Ciccoida::coefficient(double x) const {/*Геометрическое место оснований перпендикуляров,
-    * опущенных из вершин параболы на ее касательные есть циссоида
-    * y^2 = -(x^3)/(p/2 - x), где p - является искомым коэффициентом*/
-        return -2*(pow(x,3)/ pow(value_y(x),2)-x);
+    double Ciccoida::coefficient() const {
+        return 4*a;
     }
 
     double Ciccoida::volume() const {
