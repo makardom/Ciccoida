@@ -17,7 +17,7 @@ namespace Prog2 {
             }
             std::cout<<"repeat enter!";
             std::cin.clear();
-            std::cin.ignore();
+            std::cin.ignore(std::numeric_limits<int>::max(), '\n');
         }
     }
 
