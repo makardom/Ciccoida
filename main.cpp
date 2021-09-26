@@ -5,7 +5,6 @@
 int main() {
     Prog2::Ciccoida c;
     int fl1 = 1;
-    double a;
     while(fl1){
         std::cout<<"Your cissoida is: y^2=x^3/("<<c.get()<<"*2-x)"<<std::endl;
         std::cout<<"asymptote: "<<c.asymptote()<<std::endl;
