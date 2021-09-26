@@ -1,27 +1,28 @@
-#include <iostream>
 #include "Ciccoida/Ciccoida.h"
 
 
 int main() {
     Prog2::Ciccoida c;
     int fl1 = 1;
+    double b;
     while(fl1){
         std::cout<<"Your cissoida is: y^2=x^3/("<<c.get()<<"*2-x)"<<std::endl;
         std::cout<<"asymptote: "<<c.asymptote()<<std::endl;
         std::cout<<"square: "<<c.square()<<std::endl;
         std::cout<<"volume: "<<c.volume()<<std::endl;
         std::cout<<"Enter angle for calculate distance or press ctrl+D to exit:";
-        int grad;
+        double grad;
         if (Prog2::getNum(grad)==-1){
             break;
         }
-        if (c.distance(grad)<0){
+        b = c.distance(grad);
+        if (b<0){
             std::cout<<"This angle goes beyond the available"<<std::endl;
         }else {
-            std::cout << "distance:" << c.distance(grad) << std::endl;
+            std::cout << "distance:" << b << std::endl;
         }
         std::cout<<"Enter x for calculate y(x) and coefficient or press ctrl+D to exit:";
-        int x;
+        double x;
         if (Prog2::getNum(x)==-1){
             break;
         }
@@ -34,7 +35,7 @@ int main() {
             std::cout<<a.what()<<std::endl;
         }
         std::cout<<"Enter new a or press ctrl+D to exit:";
-        int a1;
+        double a1;
         if (Prog2::getNum(a1)==-1){
             fl1 = 0;
         }else {

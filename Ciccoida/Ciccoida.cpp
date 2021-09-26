@@ -1,6 +1,4 @@
 #include "Ciccoida.h"
-#include <iostream>
-#include <cmath>
 
 namespace Prog2{
     Ciccoida::Ciccoida(double rad) {
