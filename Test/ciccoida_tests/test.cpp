@@ -26,21 +26,21 @@ TEST(CiccoidaSetter, Setter){
 TEST(CiccoidaMethods, SQUARE){//test for calculating the area
     Prog2::Ciccoida c;
     const double near = 0.0001;
-    ASSERT_NEAR(3*PI*c.get()*c.get(), c.square(), near);
+    ASSERT_NEAR(3*M_PI*c.get()*c.get(), c.square(), near);
 }
 
 TEST(CiccoidaMethods, Distance){//tests for calculating the distance
     Prog2::Ciccoida c(2);
     const double near = 0.0001;
     ASSERT_NEAR(0, c.distance(0), near);
-    ASSERT_NEAR(2*c.get()* sin(PI/8)* sin(PI/8)/ cos(PI/8), c.distance(22.5), near);
-    ASSERT_NEAR(2*c.get()* sin(PI/4)* sin(PI/4)/ cos(PI/4), c.distance(45), near);
-    ASSERT_NEAR(2*c.get()* sin(-PI/3)* sin(-PI/3)/ cos(-PI/3), c.distance(-60), near);
+    ASSERT_NEAR(2*c.get()* sin(M_PI/8)* sin(M_PI/8)/ cos(M_PI/8), c.distance(22.5), near);
+    ASSERT_NEAR(2*c.get()* sin(M_PI/4)* sin(M_PI/4)/ cos(M_PI/4), c.distance(45), near);
+    ASSERT_NEAR(2*c.get()* sin(-M_PI/3)* sin(-M_PI/3)/ cos(-M_PI/3), c.distance(-60), near);
     c.set(-5);
-    ASSERT_NEAR(2*c.get()* sin(PI)* sin(PI)/ cos(PI), c.distance(180), near);
-    ASSERT_NEAR(2*c.get()* sin(2*PI/3)* sin(2*PI/3)/ cos(2*PI/3), c.distance(120), near);
-    ASSERT_NEAR(2*c.get()* sin(5*PI/4)* sin(5*PI/4)/ cos(5*PI/4), c.distance(225), near);
-//    ASSERT_NEAR(2*c.get()* sin(PI/4)* sin(PI/4)/ cos(PI/4), c.distance(45), near);
+    ASSERT_NEAR(2*c.get()* sin(M_PI)* sin(M_PI)/ cos(M_PI), c.distance(180), near);
+    ASSERT_NEAR(2*c.get()* sin(2*M_PI/3)* sin(2*M_PI/3)/ cos(2*M_PI/3), c.distance(120), near);
+    ASSERT_NEAR(2*c.get()* sin(5*M_PI/4)* sin(5*M_PI/4)/ cos(5*M_PI/4), c.distance(225), near);
+//    ASSERT_NEAR(2*c.get()* sin(M_PI/4)* sin(M_PI/4)/ cos(M_PI/4), c.distance(45), near);
 }
 
 TEST(CiccoidaMethods, VALUEY){//tests for calculating y(x)
@@ -70,22 +70,18 @@ TEST(CiccoidaMethods, ASYMPTOTE){//tests for calculate asymptote
 
 TEST(CiccoidaMethods, VOLUME){//tests for calculating volume
     Prog2::Ciccoida c(3);
-    ASSERT_EQ(2*PI*PI*c.get()*c.get()*c.get(), c.volume());
+    ASSERT_EQ(2*M_PI*M_PI*c.get()*c.get()*c.get(), c.volume());
     c.set(-8);
-    ASSERT_EQ(-2*PI*PI*c.get()*c.get()*c.get(), c.volume());
+    ASSERT_EQ(-2*M_PI*M_PI*c.get()*c.get()*c.get(), c.volume());
 }
 
 TEST(CiccoidaMethods, COEFFICIENT){
     Prog2::Ciccoida c(2);
-    double x = 3.54;
-    ASSERT_EQ(-2*(pow(x,3)/ pow(sqrt(x*x*x/(2*c.get()-x)),2)-x), c.coefficient(x));
-    x = 1;
-    ASSERT_EQ(-2*(pow(x,3)/ pow(sqrt(x*x*x/(2*c.get()-x)),2)-x), c.coefficient(x));
+    ASSERT_EQ(4*c.get(), c.coefficient());
+    ASSERT_EQ(4*c.get(), c.coefficient());
     c.set(-8);
-    x = -3.6536;
-    ASSERT_EQ(-2*(pow(x,3)/ pow(sqrt(x*x*x/(2*c.get()-x)),2)-x), c.coefficient(x));
-    x = -7;
-    ASSERT_EQ(-2*(pow(x,3)/ pow(sqrt(x*x*x/(2*c.get()-x)),2)-x), c.coefficient(x));
+    ASSERT_EQ(4*c.get(), c.coefficient());
+    ASSERT_EQ(4*c.get(), c.coefficient());
 }
 
 int _tmain(){
